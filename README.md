@@ -1,4 +1,4 @@
-# 🐍 Meus Projetos em Python
+# 💻 Meus Projetos em Python
 
 Repositório com projetos desenvolvidos durante meu aprendizado de Python.
 
