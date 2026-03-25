@@ -60,18 +60,7 @@ while resposta_final != palavra_secreta:
     if r1.isdigit():
         os.system('clear')
         print("Por favor, digite apenas letras!")
-        
-        sair = input("Deseja continuar? [sim]/[nao] ").lower().startswith("s")
-        if sair is True:
-            resposta_final = ''
-            r2 = ''
-            erros = 0
-            acertos = 0
-            jogadas = 0
-            palavra_secreta = random.choice(base_palavras)
-            continue
-        else:
-            break
+        continue
         
 
     ###############
@@ -80,7 +69,7 @@ while resposta_final != palavra_secreta:
         os.system('clear')
         acerto_direto += 1
         print(f"Caramba! Você acertou a palavra secreta completa com \n{jogadas} jogadas e {erros} erro(s)!\nA palavra era {palavra_secreta.upper()}")
-        sair = input("Deseja continuar? [sim]/[nao] ").lower().startswith("s")
+        sair = input("Deseja recomeçar? [sim]/[nao] ").lower().startswith("s")
         if sair is True:
             resposta_final = ''
             r2 = ''
@@ -110,7 +99,7 @@ while resposta_final != palavra_secreta:
             print(f'Palavra formada: {resposta_final}')
             if resposta_final == palavra_secreta:
                 os.system('clear')
-                print(f"Parabens!  Você acertou a palavra secreta, com o total de {jogadas} jogadas, {erros} erros e {acertos} acertos!")
+                print(f"Parabens!  Você acertou a palavra secreta, com o total de {jogadas} jogadas, {erros} erros e {acertos} acertos!\n A palavra era {palavra_secreta.upper()}")
                 sair = input("Deseja continuar? [sim]/[nao] ").lower().startswith("s")
                 if sair is True:
                     resposta_final = ''
