@@ -39,9 +39,6 @@ while True:
     x1 = ((b * -1)+resultado_rq_d) / (2 * a)
     x2 = ((b * -1)-resultado_rq_d) / (2 * a)
 
-    x1_r = str(x1)
-    x2_r = str(x2)
-
     print(f"O resultado é: X¹ = {formatar(x1)} e X² = {formatar(x2)}")
     resp = input("Deseja calcular outra equação?").lower().startswith("s")
 
