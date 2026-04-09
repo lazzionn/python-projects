@@ -10,21 +10,42 @@ def raiz_quadrada(numero):
     except (TypeError, ValueError):
         raise ValueError("Entrada inválida. Forneça um número real ou inteiro.")
 
-print((' ' * 3), 'Calculadora 2° grau')
-a = int(input("Digite o valor de a: "))
-b = int(input("Digite o valor de b:"))
-c = int(input("Digite o valor de c:"))
-delta = ((b ** 2) - (4 * a * c))
-resultado_rq_d = raiz_quadrada(delta)
-x1 = ((b * -1)+resultado_rq_d) / (2 * a)
-x2 = ((b * -1)-resultado_rq_d) / (2 * a)
+def formatar(z):
+    if isinstance(z, complex):
+        return f"{z.real:.2f} + {z.imag:.2f}j"
+    if z == int(z):
+        return int(z)
+    else:
+        return f"{z:.2f}"
 
-x1_r = str(x1)
-x2_r = str(x2)
+while True:
+    print((' ' * 3), 'Calculadora 2° grau')
+    a = int(input("Digite o valor de a: "))
+    b = int(input("Digite o valor de b: "))
+    c = int(input("Digite o valor de c: "))
+    if a == 0:
+        print("Isso não é uma equação do segundo grau!")
+        continue
+    elif b == 0:
+        print("Isso não é uma equação do segundo grau!")
+        continue
+    if c == 0:
+        print("Isso não é uma equação do segundo grau!")
+        continue
 
-if (len(x1_r) > 3) or (len(x2_r) > 3):
-    print(f'\nO resultado dessa equação de segundo grau é: {x1:.2f} e {x2:.2f}')
-else:
-    print(f'\nO resultado dessa equação de segundo grau é: X1 = {x1:.0f}  X2 = {x2:.0f}')
-    
-    
+    delta = ((b ** 2) - (4 * a * c))
+    resultado_rq_d = raiz_quadrada(delta)
+
+    x1 = ((b * -1)+resultado_rq_d) / (2 * a)
+    x2 = ((b * -1)-resultado_rq_d) / (2 * a)
+
+    x1_r = str(x1)
+    x2_r = str(x2)
+
+    print(f"O resultado é: X¹ = {formatar(x1)} e X² = {formatar(x2)}")
+    resp = input("Deseja calcular outra equação?").lower().startswith("s")
+
+    if resp:
+        continue
+    else:
+        break
