@@ -26,13 +26,6 @@ while True:
     if a == 0:
         print("Isso não é uma equação do segundo grau!")
         continue
-    elif b == 0:
-        print("Isso não é uma equação do segundo grau!")
-        continue
-    if c == 0:
-        print("Isso não é uma equação do segundo grau!")
-        continue
-
     delta = ((b ** 2) - (4 * a * c))
     resultado_rq_d = raiz_quadrada(delta)
 
